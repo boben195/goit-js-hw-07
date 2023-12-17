@@ -1,0 +1,16 @@
+.gallery {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+box-sizing: border-box;
+}
+body {
+    background-color: brown;
+}
+
+
+
+img {
+    width: 540px;
+    height: 380px;
+}
