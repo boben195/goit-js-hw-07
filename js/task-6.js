@@ -10,6 +10,8 @@ const buttonCr = document.querySelector('[data-create]');
 const buttonDes = document.querySelector('[data-destroy]');
 const div = document.querySelector('#boxes');
 
+const magikNumberA = 30;
+const magikNumberB = 10;
 
 function destroyBoxes() {
   div.textContent = '';
@@ -19,7 +21,8 @@ function destroyBoxes() {
 function createBoxes(amount) {
   destroyBoxes();
   for (let i = 0; i < amount; i++) {
-    let boxe = 30 + 10 * i;
+    
+    let boxe = magikNumberA + magikNumberB * i;
     const divBox = document.createElement('div');
     divBox.style.cssText = `width: ${boxe}px; height: ${boxe}px; background-color: ${getRandomHexColor()}`
     div.insertAdjacentElement('beforeend', divBox)
@@ -29,8 +32,9 @@ function createBoxes(amount) {
 
 
 buttonCr.addEventListener('click', () => {
-  if (1 <= form.value || form.value <= 100) {
-    createBoxes(form.value)
+  const toNumber = Number(form.value)
+  if (1 <= form.value && form.value <= 100) {
+    createBoxes(toNumber)
   }
 })
 
